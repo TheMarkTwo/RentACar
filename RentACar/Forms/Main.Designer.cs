@@ -88,6 +88,7 @@
             this.vozilaToolStripMenuItem.Name = "vozilaToolStripMenuItem";
             this.vozilaToolStripMenuItem.Size = new System.Drawing.Size(73, 36);
             this.vozilaToolStripMenuItem.Text = "Vozila";
+            this.vozilaToolStripMenuItem.Click += new System.EventHandler(this.vozilaToolStripMenuItem_Click);
             // 
             // kupciToolStripMenuItem
             // 
@@ -321,6 +322,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matkov Luksuzni Rent a Car";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip.ResumeLayout(false);

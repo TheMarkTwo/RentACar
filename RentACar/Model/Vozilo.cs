@@ -15,7 +15,7 @@ namespace RentACar.Model
         public int Snaga { get; set; }
         public int Brzina { get; set; }
         public decimal NulaDoSto { get; set; }
-        public int CijenaDan { get; set; }
+        public decimal CijenaDan { get; set; }
         public string Slika { get; set; }
     }
 }

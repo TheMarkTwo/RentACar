@@ -27,5 +27,11 @@ namespace RentACar.Forms
                 dgvNajmovi.Rows.Add(3, "BMW 730li", "521622312", DateOnly.Parse("25.5.2022"), DateOnly.Parse("30.5.2022"), 150);
             }
         }
+
+        private void vozilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVozila voz = new frmVozila();
+            voz.Show();
+        }
     }
 }
