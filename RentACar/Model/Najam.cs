@@ -12,7 +12,7 @@ namespace RentACar.Model
         public int ID_vozila { get; set; }
         public string OIB_kupca { get; set; }
         public DateOnly DatumNajma { get; set; }
-        public int BrojDana { get; set; }
+        public DateOnly DatumKraja { get; set; }
         public int Cijena { get; set; }
     }
 }
