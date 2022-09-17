@@ -46,10 +46,16 @@ namespace RentACar.Forms
                     byte[] imgBytes = Convert.FromBase64String(v.Slika);
                     using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
 
-                    dgvKatalog.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
+                    dgvVozila.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
                 }
             }
             conn.Close();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            frmDodavanjeVozila dodvoz = new frmDodavanjeVozila();
+            dodvoz.ShowDialog();
         }
     }
 }

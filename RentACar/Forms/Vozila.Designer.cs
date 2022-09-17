@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVozila));
-            this.lblKatalog = new System.Windows.Forms.Label();
-            this.dgvKatalog = new System.Windows.Forms.DataGridView();
-            this.btnPretrazi = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblVozila = new System.Windows.Forms.Label();
+            this.dgvVozila = new System.Windows.Forms.DataGridView();
+            this.btnUredi = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnIzbrisi = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,32 +45,32 @@
             this.Brzina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NulaDoSto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CijenaDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKatalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblKatalog
+            // lblVozila
             // 
-            this.lblKatalog.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblKatalog.Location = new System.Drawing.Point(12, 1);
-            this.lblKatalog.Name = "lblKatalog";
-            this.lblKatalog.Size = new System.Drawing.Size(1282, 66);
-            this.lblKatalog.TabIndex = 8;
-            this.lblKatalog.Text = "Katalog vozila";
-            this.lblKatalog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVozila.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblVozila.Location = new System.Drawing.Point(12, 1);
+            this.lblVozila.Name = "lblVozila";
+            this.lblVozila.Size = new System.Drawing.Size(1282, 66);
+            this.lblVozila.TabIndex = 8;
+            this.lblVozila.Text = "Popis vozila";
+            this.lblVozila.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvKatalog
+            // dgvVozila
             // 
-            this.dgvKatalog.AllowUserToAddRows = false;
-            this.dgvKatalog.AllowUserToDeleteRows = false;
-            this.dgvKatalog.AllowUserToResizeColumns = false;
-            this.dgvKatalog.AllowUserToResizeRows = false;
+            this.dgvVozila.AllowUserToAddRows = false;
+            this.dgvVozila.AllowUserToDeleteRows = false;
+            this.dgvVozila.AllowUserToResizeColumns = false;
+            this.dgvVozila.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgvKatalog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvKatalog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKatalog.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvKatalog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvKatalog.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvKatalog.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvVozila.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVozila.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVozila.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvVozila.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVozila.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvVozila.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -78,9 +78,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKatalog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvKatalog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKatalog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVozila.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVozila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVozila.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Slika,
             this.Naziv,
@@ -90,19 +90,19 @@
             this.CijenaDan});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKatalog.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvKatalog.EnableHeadersVisualStyles = false;
-            this.dgvKatalog.Location = new System.Drawing.Point(12, 72);
-            this.dgvKatalog.MultiSelect = false;
-            this.dgvKatalog.Name = "dgvKatalog";
-            this.dgvKatalog.ReadOnly = true;
-            this.dgvKatalog.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVozila.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVozila.EnableHeadersVisualStyles = false;
+            this.dgvVozila.Location = new System.Drawing.Point(12, 72);
+            this.dgvVozila.MultiSelect = false;
+            this.dgvVozila.Name = "dgvVozila";
+            this.dgvVozila.ReadOnly = true;
+            this.dgvVozila.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -110,106 +110,109 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKatalog.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvKatalog.RowHeadersVisible = false;
-            this.dgvKatalog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvKatalog.RowTemplate.Height = 160;
-            this.dgvKatalog.RowTemplate.ReadOnly = true;
-            this.dgvKatalog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKatalog.Size = new System.Drawing.Size(1282, 577);
-            this.dgvKatalog.TabIndex = 9;
+            this.dgvVozila.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVozila.RowHeadersVisible = false;
+            this.dgvVozila.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvVozila.RowTemplate.Height = 140;
+            this.dgvVozila.RowTemplate.ReadOnly = true;
+            this.dgvVozila.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVozila.Size = new System.Drawing.Size(1282, 497);
+            this.dgvVozila.TabIndex = 9;
             // 
-            // btnPretrazi
+            // btnUredi
             // 
-            this.btnPretrazi.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnPretrazi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPretrazi.FlatAppearance.BorderSize = 0;
-            this.btnPretrazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPretrazi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPretrazi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPretrazi.Location = new System.Drawing.Point(60, 664);
-            this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(348, 45);
-            this.btnPretrazi.TabIndex = 13;
-            this.btnPretrazi.Text = "Uredi podatke o vozli";
-            this.btnPretrazi.UseVisualStyleBackColor = false;
+            this.btnUredi.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnUredi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUredi.FlatAppearance.BorderSize = 0;
+            this.btnUredi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUredi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUredi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUredi.Location = new System.Drawing.Point(60, 589);
+            this.btnUredi.Name = "btnUredi";
+            this.btnUredi.Size = new System.Drawing.Size(348, 45);
+            this.btnUredi.TabIndex = 13;
+            this.btnUredi.Text = "Uredi podatke o vozli";
+            this.btnUredi.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnDodaj
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(479, 664);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(348, 45);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Dodaj vozilo";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDodaj.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDodaj.FlatAppearance.BorderSize = 0;
+            this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDodaj.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDodaj.Location = new System.Drawing.Point(480, 589);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(348, 45);
+            this.btnDodaj.TabIndex = 14;
+            this.btnDodaj.Text = "Dodaj vozilo";
+            this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // button2
+            // btnIzbrisi
             // 
-            this.button2.BackColor = System.Drawing.Color.Firebrick;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(895, 664);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(348, 45);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Izbrisi vozilo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnIzbrisi.BackColor = System.Drawing.Color.Firebrick;
+            this.btnIzbrisi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzbrisi.FlatAppearance.BorderSize = 0;
+            this.btnIzbrisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzbrisi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIzbrisi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIzbrisi.Location = new System.Drawing.Point(895, 589);
+            this.btnIzbrisi.Name = "btnIzbrisi";
+            this.btnIzbrisi.Size = new System.Drawing.Size(348, 45);
+            this.btnIzbrisi.TabIndex = 15;
+            this.btnIzbrisi.Text = "Izbrisi vozilo";
+            this.btnIzbrisi.UseVisualStyleBackColor = false;
             // 
             // ID
             // 
-            this.ID.FillWeight = 27.90349F;
+            this.ID.FillWeight = 33.2091F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // Slika
             // 
-            this.Slika.FillWeight = 129.2484F;
+            this.Slika.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Slika.FillWeight = 103.3988F;
             this.Slika.HeaderText = "Slika";
             this.Slika.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Slika.Name = "Slika";
             this.Slika.ReadOnly = true;
+            this.Slika.Width = 208;
             // 
             // Naziv
             // 
-            this.Naziv.FillWeight = 95.87928F;
+            this.Naziv.FillWeight = 130.9053F;
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
             this.Naziv.ReadOnly = true;
             // 
             // Snaga
             // 
-            this.Snaga.FillWeight = 95.87928F;
+            this.Snaga.FillWeight = 85.15334F;
             this.Snaga.HeaderText = "Snaga";
             this.Snaga.Name = "Snaga";
             this.Snaga.ReadOnly = true;
             // 
             // Brzina
             // 
-            this.Brzina.FillWeight = 95.87928F;
+            this.Brzina.FillWeight = 80.94453F;
             this.Brzina.HeaderText = "Najveca brzina";
             this.Brzina.Name = "Brzina";
             this.Brzina.ReadOnly = true;
             // 
             // NulaDoSto
             // 
-            this.NulaDoSto.FillWeight = 95.87928F;
+            this.NulaDoSto.FillWeight = 114.1099F;
             this.NulaDoSto.HeaderText = "0 - 100km/h";
             this.NulaDoSto.Name = "NulaDoSto";
             this.NulaDoSto.ReadOnly = true;
             // 
             // CijenaDan
             // 
-            this.CijenaDan.FillWeight = 95.87928F;
+            this.CijenaDan.FillWeight = 88.82803F;
             this.CijenaDan.HeaderText = "Cijena po danu";
             this.CijenaDan.Name = "CijenaDan";
             this.CijenaDan.ReadOnly = true;
@@ -219,12 +222,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1306, 721);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.dgvKatalog);
-            this.Controls.Add(this.lblKatalog);
+            this.ClientSize = new System.Drawing.Size(1306, 647);
+            this.Controls.Add(this.btnIzbrisi);
+            this.Controls.Add(this.btnDodaj);
+            this.Controls.Add(this.btnUredi);
+            this.Controls.Add(this.dgvVozila);
+            this.Controls.Add(this.lblVozila);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -232,18 +235,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled vozila";
             this.Load += new System.EventHandler(this.frmVozila_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKatalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Label lblKatalog;
-        private DataGridView dgvKatalog;
-        private Button btnPretrazi;
-        private Button button1;
-        private Button button2;
+        private Label lblVozila;
+        private DataGridView dgvVozila;
+        private Button btnUredi;
+        private Button btnDodaj;
+        private Button btnIzbrisi;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewImageColumn Slika;
         private DataGridViewTextBoxColumn Naziv;
