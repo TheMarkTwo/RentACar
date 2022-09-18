@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Model
 {
-    internal class Vozilo
+    public class Vozilo
     {
         public int ID { get; set; }
         public string Marka { get; set; }
@@ -17,5 +17,19 @@ namespace RentACar.Model
         public decimal NulaDoSto { get; set; }
         public decimal CijenaDan { get; set; }
         public string Slika { get; set; }
+
+        public Vozilo() { }
+
+        public Vozilo(string marka, string model, decimal kubikaza, int snaga, int brzina, decimal nulaDoSto, decimal cijenaDan, string slika)
+        {
+            Marka = marka;
+            Model = model;
+            Kubikaza = kubikaza;
+            Snaga = snaga;
+            Brzina = brzina;
+            NulaDoSto = nulaDoSto;
+            CijenaDan = cijenaDan;
+            Slika = slika;
+        }
     }
 }

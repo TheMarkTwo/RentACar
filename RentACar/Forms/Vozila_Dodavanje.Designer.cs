@@ -46,7 +46,7 @@
             this.pboxSlika = new System.Windows.Forms.PictureBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPretraga = new System.Windows.Forms.Label();
+            this.lblNaslov = new System.Windows.Forms.Label();
             this.btnSpremi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxSlika)).BeginInit();
             this.panel1.SuspendLayout();
@@ -222,15 +222,15 @@
             this.panel1.Size = new System.Drawing.Size(797, 522);
             this.panel1.TabIndex = 27;
             // 
-            // lblPretraga
+            // lblNaslov
             // 
-            this.lblPretraga.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPretraga.Location = new System.Drawing.Point(0, 61);
-            this.lblPretraga.Name = "lblPretraga";
-            this.lblPretraga.Size = new System.Drawing.Size(453, 59);
-            this.lblPretraga.TabIndex = 29;
-            this.lblPretraga.Text = "Dodavanje vozila";
-            this.lblPretraga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNaslov.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNaslov.Location = new System.Drawing.Point(0, 61);
+            this.lblNaslov.Name = "lblNaslov";
+            this.lblNaslov.Size = new System.Drawing.Size(453, 59);
+            this.lblNaslov.TabIndex = 29;
+            this.lblNaslov.Text = "Dodavanje vozila";
+            this.lblNaslov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSpremi
             // 
@@ -255,7 +255,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
             this.Controls.Add(this.btnSpremi);
-            this.Controls.Add(this.lblPretraga);
+            this.Controls.Add(this.lblNaslov);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMarka);
             this.Controls.Add(this.menuStrip);
@@ -278,6 +278,7 @@
             this.Name = "frmDodavanjeVozila";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje vozila";
+            this.Load += new System.EventHandler(this.frmDodavanjeVozila_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxSlika)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -304,7 +305,7 @@
         private PictureBox pboxSlika;
         private MenuStrip menuStrip;
         private Panel panel1;
-        private Label lblPretraga;
+        private Label lblNaslov;
         private Button btnSpremi;
     }
 }

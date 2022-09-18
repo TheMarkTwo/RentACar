@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RentACar.DBModel;
+using RentACar.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,31 @@ namespace RentACar.Forms
 {
     public partial class frmDodavanjeVozila : Form
     {
-        private readonly string connString = Properties.Settings.Default.connString;
+        DBComms dbc = new();
         String base64Img;
+
+        bool uredivanje = false;
+        Vozilo v;
 
         public frmDodavanjeVozila()
         {
             InitializeComponent();
+        }
+
+        public frmDodavanjeVozila(Vozilo _v)
+        {
+            uredivanje = true;
+            v = _v;
+            InitializeComponent();
+        }
+
+        private void frmDodavanjeVozila_Load(object sender, EventArgs e)
+        {
+            if (uredivanje)
+            {
+                lblNaslov.Text = "Uredivanje vozila";
+                this.Text = "Uredivanje vozila";
+            }
         }
 
         private void pboxSlika_Click(object sender, EventArgs e)
@@ -51,26 +72,14 @@ namespace RentACar.Forms
                 decimal nulaDoSto = decimal.Parse(txtNulaDoSto.Text);
                 decimal cijenaDan = decimal.Parse(txtCijenaDan.Text);
                 string slika = base64Img;
-
-                string queryString = $"INSERT INTO Vozila (Marka, Model, Kubikaza, Snaga, Brzina, NulaDoSto, CijenaDan, Slika) " +
-                    $"VALUES (@marka, @model, @kubikaza, @snaga, @brzina, @nulaDoSto, @cijenaDan, @slika)";
-                SqlConnection conn = new SqlConnection(connString);
-                SqlCommand command = new SqlCommand(queryString, conn);
-                command.Parameters.AddWithValue("@marka", marka);
-                command.Parameters.AddWithValue("@model", model);
-                command.Parameters.AddWithValue("@kubikaza", kubikaza);
-                command.Parameters.AddWithValue("@snaga", snaga);
-                command.Parameters.AddWithValue("@brzina", brzina);
-                command.Parameters.AddWithValue("@nulaDoSto", nulaDoSto);
-                command.Parameters.AddWithValue("@cijenaDan", cijenaDan);
-                command.Parameters.AddWithValue("@slika", slika);
-                conn.Open();
-                command.ExecuteNonQuery();
-                conn.Close();
+                Vozilo v = new(marka, model, kubikaza, snaga, brzina, nulaDoSto, cijenaDan, slika);
+                dbc.SpremiVozilo(v);
+                MessageBox.Show("Uspjesno ste spremili vozilo", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Provjerite format unosa brojcanih vrijednosti ili popunite sva polja", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Popunite sva polja ili provjerite format unosa brojcanih vrijednosti", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

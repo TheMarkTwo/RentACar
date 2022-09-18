@@ -87,14 +87,16 @@
             // vozilaToolStripMenuItem
             // 
             this.vozilaToolStripMenuItem.Name = "vozilaToolStripMenuItem";
-            this.vozilaToolStripMenuItem.Size = new System.Drawing.Size(73, 36);
+            this.vozilaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.vozilaToolStripMenuItem.Size = new System.Drawing.Size(77, 36);
             this.vozilaToolStripMenuItem.Text = "Vozila";
             this.vozilaToolStripMenuItem.Click += new System.EventHandler(this.vozilaToolStripMenuItem_Click);
             // 
             // kupciToolStripMenuItem
             // 
             this.kupciToolStripMenuItem.Name = "kupciToolStripMenuItem";
-            this.kupciToolStripMenuItem.Size = new System.Drawing.Size(69, 36);
+            this.kupciToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.kupciToolStripMenuItem.Size = new System.Drawing.Size(73, 36);
             this.kupciToolStripMenuItem.Text = "Kupci";
             // 
             // dgvNajmovi

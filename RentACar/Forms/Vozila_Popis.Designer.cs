@@ -35,9 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVozila));
             this.lblVozila = new System.Windows.Forms.Label();
             this.dgvVozila = new System.Windows.Forms.DataGridView();
-            this.btnUredi = new System.Windows.Forms.Button();
-            this.btnDodaj = new System.Windows.Forms.Button();
-            this.btnIzbrisi = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,15 +42,20 @@
             this.Brzina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NulaDoSto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CijenaDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izbrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVozila
             // 
             this.lblVozila.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblVozila.Location = new System.Drawing.Point(12, 1);
+            this.lblVozila.Location = new System.Drawing.Point(12, 43);
             this.lblVozila.Name = "lblVozila";
-            this.lblVozila.Size = new System.Drawing.Size(1282, 66);
+            this.lblVozila.Size = new System.Drawing.Size(1282, 67);
             this.lblVozila.TabIndex = 8;
             this.lblVozila.Text = "Popis vozila";
             this.lblVozila.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -98,7 +100,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVozila.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVozila.EnableHeadersVisualStyles = false;
-            this.dgvVozila.Location = new System.Drawing.Point(12, 72);
+            this.dgvVozila.Location = new System.Drawing.Point(12, 112);
             this.dgvVozila.MultiSelect = false;
             this.dgvVozila.Name = "dgvVozila";
             this.dgvVozila.ReadOnly = true;
@@ -116,54 +118,9 @@
             this.dgvVozila.RowTemplate.Height = 140;
             this.dgvVozila.RowTemplate.ReadOnly = true;
             this.dgvVozila.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVozila.Size = new System.Drawing.Size(1282, 497);
+            this.dgvVozila.Size = new System.Drawing.Size(1282, 523);
             this.dgvVozila.TabIndex = 9;
-            // 
-            // btnUredi
-            // 
-            this.btnUredi.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnUredi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUredi.FlatAppearance.BorderSize = 0;
-            this.btnUredi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUredi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUredi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUredi.Location = new System.Drawing.Point(60, 589);
-            this.btnUredi.Name = "btnUredi";
-            this.btnUredi.Size = new System.Drawing.Size(348, 45);
-            this.btnUredi.TabIndex = 13;
-            this.btnUredi.Text = "Uredi podatke o vozli";
-            this.btnUredi.UseVisualStyleBackColor = false;
-            // 
-            // btnDodaj
-            // 
-            this.btnDodaj.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDodaj.FlatAppearance.BorderSize = 0;
-            this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDodaj.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDodaj.Location = new System.Drawing.Point(480, 589);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(348, 45);
-            this.btnDodaj.TabIndex = 14;
-            this.btnDodaj.Text = "Dodaj vozilo";
-            this.btnDodaj.UseVisualStyleBackColor = false;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
-            // 
-            // btnIzbrisi
-            // 
-            this.btnIzbrisi.BackColor = System.Drawing.Color.Firebrick;
-            this.btnIzbrisi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzbrisi.FlatAppearance.BorderSize = 0;
-            this.btnIzbrisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIzbrisi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIzbrisi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIzbrisi.Location = new System.Drawing.Point(895, 589);
-            this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(348, 45);
-            this.btnIzbrisi.TabIndex = 15;
-            this.btnIzbrisi.Text = "Izbrisi vozilo";
-            this.btnIzbrisi.UseVisualStyleBackColor = false;
+            this.dgvVozila.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVozila_CellContentDoubleClick);
             // 
             // ID
             // 
@@ -217,15 +174,55 @@
             this.CijenaDan.Name = "CijenaDan";
             this.CijenaDan.ReadOnly = true;
             // 
+            // menuStrip
+            // 
+            this.menuStrip.AllowMerge = false;
+            this.menuStrip.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem,
+            this.urediToolStripMenuItem,
+            this.izbrisiToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
+            this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip.Size = new System.Drawing.Size(1306, 42);
+            this.menuStrip.TabIndex = 16;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // dodajToolStripMenuItem
+            // 
+            this.dodajToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dodajToolStripMenuItem.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
+            this.dodajToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(124, 36);
+            this.dodajToolStripMenuItem.Text = "Dodaj vozilo";
+            this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
+            // 
+            // urediToolStripMenuItem
+            // 
+            this.urediToolStripMenuItem.Name = "urediToolStripMenuItem";
+            this.urediToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.urediToolStripMenuItem.Size = new System.Drawing.Size(203, 36);
+            this.urediToolStripMenuItem.Text = "Uredi podatke o vozlu";
+            this.urediToolStripMenuItem.Click += new System.EventHandler(this.urediToolStripMenuItem_Click);
+            // 
+            // izbrisiToolStripMenuItem
+            // 
+            this.izbrisiToolStripMenuItem.Name = "izbrisiToolStripMenuItem";
+            this.izbrisiToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
+            this.izbrisiToolStripMenuItem.Size = new System.Drawing.Size(126, 36);
+            this.izbrisiToolStripMenuItem.Text = "Izbrisi vozilo";
+            this.izbrisiToolStripMenuItem.Click += new System.EventHandler(this.izbrisiToolStripMenuItem_Click);
+            // 
             // frmVozila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
-            this.Controls.Add(this.btnIzbrisi);
-            this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.btnUredi);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.dgvVozila);
             this.Controls.Add(this.lblVozila);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -236,7 +233,10 @@
             this.Text = "Pregled vozila";
             this.Load += new System.EventHandler(this.frmVozila_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -244,9 +244,6 @@
 
         private Label lblVozila;
         private DataGridView dgvVozila;
-        private Button btnUredi;
-        private Button btnDodaj;
-        private Button btnIzbrisi;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewImageColumn Slika;
         private DataGridViewTextBoxColumn Naziv;
@@ -254,5 +251,9 @@
         private DataGridViewTextBoxColumn Brzina;
         private DataGridViewTextBoxColumn NulaDoSto;
         private DataGridViewTextBoxColumn CijenaDan;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem dodajToolStripMenuItem;
+        private ToolStripMenuItem izbrisiToolStripMenuItem;
+        private ToolStripMenuItem urediToolStripMenuItem;
     }
 }
