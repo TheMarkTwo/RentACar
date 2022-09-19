@@ -27,6 +27,14 @@ namespace RentACar.Forms
             using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
             pboxSlika.Image = img;
             lblNaziv.Text = $"{v.Marka} {v.Model}";
+            lblSnaga.Text = v.Snaga + " PH";
+            lblKubikaza.Text = v.Kubikaza + " cm3";
+            lblBrzina.Text = v.Brzina + " km/h";
+            lblNulaDoSto.Text = v.NulaDoSto + " s";
+
+            lblCijena1.Text = $"{(double)v.CijenaDan:0,0} € dan";
+            lblCijena2.Text = $"{((double)v.CijenaDan * 0.90):0,0} € dan";
+            lblCijena3.Text = $"{((double)v.CijenaDan * 0.80):0,0} € dan";
         }
     }
 }

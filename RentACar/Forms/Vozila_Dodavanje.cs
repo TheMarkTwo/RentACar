@@ -39,6 +39,15 @@ namespace RentACar.Forms
             {
                 lblNaslov.Text = "Uredivanje vozila";
                 this.Text = "Uredivanje vozila";
+                txtMarka.Text = v.Marka;
+                txtModel.Text = v.Model;
+                txtSnaga.Text = v.Snaga.ToString();
+                txtKubikaza.Text = v.Kubikaza.ToString();
+                txtBrzina.Text = v.Brzina.ToString();
+                txtNulaDoSto.Text = v.NulaDoSto.ToString();
+                txtCijenaDan.Text = v.CijenaDan.ToString();
+                base64Img = v.Slika;
+                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(v.Slika))) pboxSlika.Image = Image.FromStream(ms);
             }
         }
 
@@ -72,8 +81,10 @@ namespace RentACar.Forms
                 decimal nulaDoSto = decimal.Parse(txtNulaDoSto.Text);
                 decimal cijenaDan = decimal.Parse(txtCijenaDan.Text);
                 string slika = base64Img;
-                Vozilo v = new(marka, model, kubikaza, snaga, brzina, nulaDoSto, cijenaDan, slika);
-                dbc.SpremiVozilo(v);
+                Vozilo voz = new(marka, model, kubikaza, snaga, brzina, nulaDoSto, cijenaDan, slika){
+                    ID = v.ID
+                };
+                dbc.SpremiVozilo(voz, uredivanje);
                 MessageBox.Show("Uspjesno ste spremili vozilo", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

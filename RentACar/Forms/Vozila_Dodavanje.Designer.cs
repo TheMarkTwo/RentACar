@@ -194,7 +194,7 @@
             this.pboxSlika.Location = new System.Drawing.Point(3, 3);
             this.pboxSlika.Name = "pboxSlika";
             this.pboxSlika.Size = new System.Drawing.Size(791, 516);
-            this.pboxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxSlika.TabIndex = 25;
             this.pboxSlika.TabStop = false;
             this.pboxSlika.Click += new System.EventHandler(this.pboxSlika_Click);

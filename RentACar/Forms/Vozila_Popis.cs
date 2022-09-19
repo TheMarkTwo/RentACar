@@ -41,7 +41,7 @@ namespace RentACar.Forms
         }
         private void urediToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDodavanjeVozila dodvoz = new frmDodavanjeVozila(new Vozilo());
+            frmDodavanjeVozila dodvoz = new frmDodavanjeVozila(dbc.DohvatiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString())));
             dodvoz.ShowDialog();
             dbc.UcitajVozila(dgvVozila, "SELECT * FROM Vozila");
         }

@@ -36,6 +36,49 @@ namespace RentACar.DBModel
             conn.Close();
             return v;
         }
+        public void SpremiVozilo(Vozilo v, bool uredivanje)
+        {
+            string queryString;
+            if (uredivanje)
+            {
+                queryString = $"UPDATE Vozila " +
+                    $"SET Marka = @marka, Model = @model, Kubikaza = @kubikaza, Snaga = @snaga, " +
+                    $"Brzina = @brzina, NulaDoSto = @nulaDoSto, CijenaDan = @cijenaDan, Slika = @slika " +
+                    $"WHERE ID = @id";
+            }
+            else
+            {
+                queryString = $"INSERT INTO Vozila (Marka, Model, Kubikaza, Snaga, Brzina, NulaDoSto, CijenaDan, Slika) " +
+                    $"VALUES (@marka, @model, @kubikaza, @snaga, @brzina, @nulaDoSto, @cijenaDan, @slika)";
+            }
+            SqlCommand command = new SqlCommand(queryString, conn);
+            command.Parameters.AddWithValue("@id", v.ID);
+            command.Parameters.AddWithValue("@marka", v.Marka);
+            command.Parameters.AddWithValue("@model", v.Model);
+            command.Parameters.AddWithValue("@kubikaza", v.Kubikaza);
+            command.Parameters.AddWithValue("@snaga", v.Snaga);
+            command.Parameters.AddWithValue("@brzina", v.Brzina);
+            command.Parameters.AddWithValue("@nulaDoSto", v.NulaDoSto);
+            command.Parameters.AddWithValue("@cijenaDan", v.CijenaDan);
+            command.Parameters.AddWithValue("@slika", v.Slika);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UrediVozilo(Vozilo v)
+        {
+
+        }
+
+        public void IzbrisiVozilo(int id)
+        {
+            string queryString = $"DELETE FROM Vozila WHERE ID = {id}";
+            SqlCommand command = new SqlCommand(queryString, conn);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public void UcitajVozila(DataGridView dgv, string queryString)
         {
@@ -65,33 +108,6 @@ namespace RentACar.DBModel
                     dgv.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
                 }
             }
-            conn.Close();
-        }
-
-        public void SpremiVozilo(Vozilo v)
-        {
-            string queryString = $"INSERT INTO Vozila (Marka, Model, Kubikaza, Snaga, Brzina, NulaDoSto, CijenaDan, Slika) " +
-                $"VALUES (@marka, @model, @kubikaza, @snaga, @brzina, @nulaDoSto, @cijenaDan, @slika)";
-            SqlCommand command = new SqlCommand(queryString, conn);
-            command.Parameters.AddWithValue("@marka", v.Marka);
-            command.Parameters.AddWithValue("@model", v.Model);
-            command.Parameters.AddWithValue("@kubikaza", v.Kubikaza);
-            command.Parameters.AddWithValue("@snaga", v.Snaga);
-            command.Parameters.AddWithValue("@brzina", v.Brzina);
-            command.Parameters.AddWithValue("@nulaDoSto", v.NulaDoSto);
-            command.Parameters.AddWithValue("@cijenaDan", v.CijenaDan);
-            command.Parameters.AddWithValue("@slika", v.Slika);
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
-        }
-
-        public void IzbrisiVozilo(int id)
-        {
-            string queryString = $"DELETE FROM Vozila WHERE ID = {id}";
-            SqlCommand command = new SqlCommand(queryString, conn);
-            conn.Open();
-            command.ExecuteNonQuery();
             conn.Close();
         }
 
