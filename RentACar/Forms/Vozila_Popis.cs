@@ -39,6 +39,7 @@ namespace RentACar.Forms
             dodvoz.ShowDialog();
             OsvjeziPopis();
         }
+
         private void urediToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDodavanjeVozila dodvoz = new frmDodavanjeVozila(dbc.DohvatiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString())));
@@ -53,9 +54,8 @@ namespace RentACar.Forms
                 DialogResult dialogres = MessageBox.Show("Jeste li sigurni da zelite obrisati ovo vozilo?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogres == DialogResult.Yes)
                 {
-                    int id = int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString());
+                    dbc.IzbrisiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString()));
                     dgvVozila.Rows.RemoveAt(dgvVozila.SelectedRows[0].Index);
-                    dbc.IzbrisiVozilo(id);
                 }
             }
         }

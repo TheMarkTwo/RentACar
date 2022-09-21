@@ -36,14 +36,14 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.izbrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblVozila = new System.Windows.Forms.Label();
-            this.dgvVozila = new System.Windows.Forms.DataGridView();
+            this.dgvKupci = new System.Windows.Forms.DataGridView();
             this.OIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Broj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKupci)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -66,6 +66,7 @@
             this.izbrisiToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.izbrisiToolStripMenuItem.Size = new System.Drawing.Size(127, 36);
             this.izbrisiToolStripMenuItem.Text = "Izbrisi kupca";
+            this.izbrisiToolStripMenuItem.Click += new System.EventHandler(this.izbrisiToolStripMenuItem_Click);
             // 
             // lblVozila
             // 
@@ -77,19 +78,19 @@
             this.lblVozila.Text = "Popis kupaca";
             this.lblVozila.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvVozila
+            // dgvKupci
             // 
-            this.dgvVozila.AllowUserToAddRows = false;
-            this.dgvVozila.AllowUserToDeleteRows = false;
-            this.dgvVozila.AllowUserToResizeColumns = false;
-            this.dgvVozila.AllowUserToResizeRows = false;
+            this.dgvKupci.AllowUserToAddRows = false;
+            this.dgvKupci.AllowUserToDeleteRows = false;
+            this.dgvKupci.AllowUserToResizeColumns = false;
+            this.dgvKupci.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgvVozila.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVozila.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVozila.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvVozila.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvVozila.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvVozila.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvKupci.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvKupci.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKupci.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvKupci.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvKupci.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvKupci.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -97,9 +98,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVozila.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvVozila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVozila.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvKupci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvKupci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKupci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OIB,
             this.Ime,
             this.Prezime,
@@ -113,13 +114,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVozila.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVozila.EnableHeadersVisualStyles = false;
-            this.dgvVozila.Location = new System.Drawing.Point(12, 112);
-            this.dgvVozila.MultiSelect = false;
-            this.dgvVozila.Name = "dgvVozila";
-            this.dgvVozila.ReadOnly = true;
-            this.dgvVozila.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvKupci.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvKupci.EnableHeadersVisualStyles = false;
+            this.dgvKupci.Location = new System.Drawing.Point(12, 112);
+            this.dgvKupci.MultiSelect = false;
+            this.dgvKupci.Name = "dgvKupci";
+            this.dgvKupci.ReadOnly = true;
+            this.dgvKupci.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,14 +128,14 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVozila.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvVozila.RowHeadersVisible = false;
-            this.dgvVozila.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvVozila.RowTemplate.Height = 60;
-            this.dgvVozila.RowTemplate.ReadOnly = true;
-            this.dgvVozila.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVozila.Size = new System.Drawing.Size(1282, 523);
-            this.dgvVozila.TabIndex = 19;
+            this.dgvKupci.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvKupci.RowHeadersVisible = false;
+            this.dgvKupci.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvKupci.RowTemplate.Height = 60;
+            this.dgvKupci.RowTemplate.ReadOnly = true;
+            this.dgvKupci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKupci.Size = new System.Drawing.Size(1282, 523);
+            this.dgvKupci.TabIndex = 19;
             // 
             // OIB
             // 
@@ -177,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
-            this.Controls.Add(this.dgvVozila);
+            this.Controls.Add(this.dgvKupci);
             this.Controls.Add(this.lblVozila);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -189,7 +190,7 @@
             this.Load += new System.EventHandler(this.frmPopisKupaca_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKupci)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +201,7 @@
         private MenuStrip menuStrip;
         private ToolStripMenuItem izbrisiToolStripMenuItem;
         private Label lblVozila;
-        private DataGridView dgvVozila;
+        private DataGridView dgvKupci;
         private DataGridViewTextBoxColumn OIB;
         private DataGridViewTextBoxColumn Ime;
         private DataGridViewTextBoxColumn Prezime;

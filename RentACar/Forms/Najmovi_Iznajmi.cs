@@ -14,7 +14,7 @@ namespace RentACar.Forms
 {
     public partial class frmIznajmi : Form
     {
-        Vozilo v;
+        Kupac k;
         DBComms dbc = new();
 
         public frmIznajmi()
@@ -32,6 +32,20 @@ namespace RentACar.Forms
         private void dgvVozila_SelectionChanged(object sender, EventArgs e)
         {
             txtVozilo.Text = dgvVozila.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void txtOIB_Leave(object sender, EventArgs e)
+        {
+            k = dbc.DohvatiKupca(txtOIB.Text);
+            txtIme.Text = k.Ime;
+            txtPrezime.Text = k.Prezime;
+            txtBroj.Text = k.Broj;
+            txtEmail.Text = k.Email;
+        }
+
+        private void btnIznajmi_Click(object sender, EventArgs e)
+        {
+            //napravi cheking za podatke
         }
     }
 }

@@ -15,7 +15,8 @@ namespace RentACar.DBModel
         // VOZILA
         public Vozilo DohvatiVozilo(int id)
         {
-            SqlCommand command = new($"SELECT * FROM Vozila WHERE ID = {id}", conn);
+            SqlCommand command = new($"SELECT * FROM Vozila WHERE ID = @id", conn);
+            command.Parameters.AddWithValue("@id", id);
             Vozilo v = new();
             conn.Open();
             using (SqlDataReader dr = command.ExecuteReader())
@@ -36,6 +37,7 @@ namespace RentACar.DBModel
             conn.Close();
             return v;
         }
+
         public void SpremiVozilo(Vozilo v, bool uredivanje)
         {
             string queryString;
@@ -68,8 +70,8 @@ namespace RentACar.DBModel
 
         public void IzbrisiVozilo(int id)
         {
-            string queryString = $"DELETE FROM Vozila WHERE ID = {id}";
-            SqlCommand command = new(queryString, conn);
+            SqlCommand command = new($"DELETE FROM Vozila WHERE ID = @id", conn);
+            command.Parameters.AddWithValue("@id", id);
             conn.Open();
             command.ExecuteNonQuery();
             conn.Close();
@@ -104,6 +106,36 @@ namespace RentACar.DBModel
         }
 
         //KUPCI
+        public Kupac DohvatiKupca(string oib)
+        {
+            SqlCommand command = new($"SELECT * FROM Kupci WHERE OIB = @oib", conn);
+            command.Parameters.AddWithValue("@oib", oib);
+            Kupac k = new();
+            conn.Open();
+            using (SqlDataReader dr = command.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    k.OIB = dr.GetString(0);
+                    k.Ime = dr.GetString(1);
+                    k.Prezime = dr.GetString(2);
+                    k.Broj = dr.GetString(3);
+                    k.Email = dr.GetString(4);
+                }
+            }
+            conn.Close();
+            return k;
+        }
+        
+        public void IzbrisiKupca(string oib)
+        {
+            SqlCommand command = new($"DELETE FROM Kupci WHERE OIB = @oib", conn);
+            command.Parameters.AddWithValue("@oib", oib);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public List<Kupac> UcitajKupce(string queryString)
         {
             List<Kupac> lista = new List<Kupac>();

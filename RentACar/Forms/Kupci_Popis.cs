@@ -23,10 +23,23 @@ namespace RentACar.Forms
 
         private void frmPopisKupaca_Load(object sender, EventArgs e)
         {
-            dgvVozila.Rows.Clear();
+            dgvKupci.Rows.Clear();
             List<Kupac> lista = dbc.UcitajKupce("SELECT * FROM Kupci");
             foreach (Kupac k in lista)
-                dgvVozila.Rows.Add(k.OIB, k.Ime, k.Prezime, k.Broj, k.Email);
+                dgvKupci.Rows.Add(k.OIB, k.Ime, k.Prezime, k.Broj, k.Email);
+        }
+
+        private void izbrisiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvKupci.SelectedRows.Count > 0)
+            {
+                DialogResult dialogres = MessageBox.Show("Jeste li sigurni da zelite obrisati ovog kupca?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogres == DialogResult.Yes)
+                {
+                    dbc.IzbrisiKupca(dgvKupci.CurrentRow.Cells[0].Value.ToString());
+                    dgvKupci.Rows.RemoveAt(dgvKupci.SelectedRows[0].Index);
+                }
+            }
         }
     }
 }

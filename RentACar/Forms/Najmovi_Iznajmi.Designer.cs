@@ -52,10 +52,10 @@
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrezime = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtBroj = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.txtBroj = new System.Windows.Forms.TextBox();
             this.btnIznajmi = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).BeginInit();
@@ -202,7 +202,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(537, 135);
+            this.label2.Location = new System.Drawing.Point(527, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 27);
             this.label2.TabIndex = 33;
@@ -226,6 +226,7 @@
             this.txtOIB.Name = "txtOIB";
             this.txtOIB.Size = new System.Drawing.Size(348, 36);
             this.txtOIB.TabIndex = 29;
+            this.txtOIB.Leave += new System.EventHandler(this.txtOIB_Leave);
             // 
             // txtVozilo
             // 
@@ -263,7 +264,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(537, 215);
+            this.label4.Location = new System.Drawing.Point(527, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 27);
             this.label4.TabIndex = 39;
@@ -273,7 +274,7 @@
             // 
             this.txtIme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIme.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIme.Location = new System.Drawing.Point(533, 243);
+            this.txtIme.Location = new System.Drawing.Point(533, 241);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(348, 36);
             this.txtIme.TabIndex = 38;
@@ -282,7 +283,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(537, 294);
+            this.label5.Location = new System.Drawing.Point(527, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 27);
             this.label5.TabIndex = 41;
@@ -292,48 +293,48 @@
             // 
             this.txtPrezime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrezime.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPrezime.Location = new System.Drawing.Point(533, 322);
+            this.txtPrezime.Location = new System.Drawing.Point(533, 320);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(348, 36);
             this.txtPrezime.TabIndex = 40;
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl1.Location = new System.Drawing.Point(527, 446);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(57, 27);
+            this.lbl1.TabIndex = 45;
+            this.lbl1.Text = "E-mail:";
+            // 
             // txtEmail
             // 
-            this.txtEmail.AutoSize = true;
-            this.txtEmail.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(537, 450);
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(533, 476);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(57, 27);
-            this.txtEmail.TabIndex = 45;
-            this.txtEmail.Text = "E-mail:";
+            this.txtEmail.Size = new System.Drawing.Size(348, 36);
+            this.txtEmail.TabIndex = 44;
             // 
-            // textBox3
+            // lbl
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(533, 478);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(348, 36);
-            this.textBox3.TabIndex = 44;
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl.Location = new System.Drawing.Point(527, 367);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(43, 27);
+            this.lbl.TabIndex = 43;
+            this.lbl.Text = "Broj:";
             // 
             // txtBroj
             // 
-            this.txtBroj.AutoSize = true;
-            this.txtBroj.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBroj.Location = new System.Drawing.Point(537, 371);
+            this.txtBroj.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBroj.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBroj.Location = new System.Drawing.Point(533, 397);
             this.txtBroj.Name = "txtBroj";
-            this.txtBroj.Size = new System.Drawing.Size(43, 27);
-            this.txtBroj.TabIndex = 43;
-            this.txtBroj.Text = "Broj:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(533, 399);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(348, 36);
-            this.textBox4.TabIndex = 42;
+            this.txtBroj.Size = new System.Drawing.Size(348, 36);
+            this.txtBroj.TabIndex = 42;
             // 
             // btnIznajmi
             // 
@@ -349,6 +350,7 @@
             this.btnIznajmi.TabIndex = 46;
             this.btnIznajmi.Text = "IZNAJMI";
             this.btnIznajmi.UseVisualStyleBackColor = false;
+            this.btnIznajmi.Click += new System.EventHandler(this.btnIznajmi_Click);
             // 
             // label6
             // 
@@ -369,19 +371,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnIznajmi);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtBroj);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPrezime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtIme);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.btnIznajmi);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblNaslov);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtBroj);
             this.Controls.Add(this.dtpDatumDo);
+            this.Controls.Add(this.lbl);
             this.Controls.Add(this.dtpDatumOd);
             this.Controls.Add(this.lblDo);
             this.Controls.Add(this.lblOd);
@@ -422,10 +424,10 @@
         private TextBox txtIme;
         private Label label5;
         private TextBox txtPrezime;
-        private Label txtEmail;
-        private TextBox textBox3;
-        private Label txtBroj;
-        private TextBox textBox4;
+        private Label lbl1;
+        private TextBox txtEmail;
+        private Label lbl;
+        private TextBox txtBroj;
         private Button btnIznajmi;
         private Label label6;
         private DataGridViewTextBoxColumn ID;
