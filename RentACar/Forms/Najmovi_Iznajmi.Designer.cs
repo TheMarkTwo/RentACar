@@ -58,6 +58,8 @@
             this.txtBroj = new System.Windows.Forms.TextBox();
             this.btnIznajmi = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblCijena = new System.Windows.Forms.Label();
+            this.lblBrojDana = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,6 +167,7 @@
             this.dtpDatumDo.Name = "dtpDatumDo";
             this.dtpDatumDo.Size = new System.Drawing.Size(348, 40);
             this.dtpDatumDo.TabIndex = 31;
+            this.dtpDatumDo.ValueChanged += new System.EventHandler(this.dtpDatumDo_ValueChanged);
             // 
             // dtpDatumOd
             // 
@@ -177,6 +180,7 @@
             this.dtpDatumOd.Name = "dtpDatumOd";
             this.dtpDatumOd.Size = new System.Drawing.Size(348, 40);
             this.dtpDatumOd.TabIndex = 30;
+            this.dtpDatumOd.ValueChanged += new System.EventHandler(this.dtpDatumOd_ValueChanged);
             // 
             // lblDo
             // 
@@ -184,9 +188,9 @@
             this.lblDo.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDo.Location = new System.Drawing.Point(930, 289);
             this.lblDo.Name = "lblDo";
-            this.lblDo.Size = new System.Drawing.Size(121, 27);
+            this.lblDo.Size = new System.Drawing.Size(225, 27);
             this.lblDo.TabIndex = 35;
-            this.lblDo.Text = "Datum najma do:";
+            this.lblDo.Text = "Datum najma do (ne ukljucujuci):";
             // 
             // lblOd
             // 
@@ -194,9 +198,9 @@
             this.lblOd.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblOd.Location = new System.Drawing.Point(931, 209);
             this.lblOd.Name = "lblOd";
-            this.lblOd.Size = new System.Drawing.Size(121, 27);
+            this.lblOd.Size = new System.Drawing.Size(206, 27);
             this.lblOd.TabIndex = 34;
-            this.lblOd.Text = "Datum najma od:";
+            this.lblOd.Text = "Datum najma od (ukljucujuci):";
             // 
             // label2
             // 
@@ -357,7 +361,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label6.Font = new System.Drawing.Font("Dubai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(936, 399);
+            this.label6.Location = new System.Drawing.Point(936, 407);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(348, 144);
             this.label6.TabIndex = 47;
@@ -365,12 +369,35 @@
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Visible = false;
             // 
+            // lblCijena
+            // 
+            this.lblCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCijena.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCijena.Location = new System.Drawing.Point(937, 564);
+            this.lblCijena.Name = "lblCijena";
+            this.lblCijena.Size = new System.Drawing.Size(347, 53);
+            this.lblCijena.TabIndex = 48;
+            this.lblCijena.Text = "Cijena:";
+            this.lblCijena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBrojDana
+            // 
+            this.lblBrojDana.AutoSize = true;
+            this.lblBrojDana.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBrojDana.Location = new System.Drawing.Point(929, 366);
+            this.lblBrojDana.Name = "lblBrojDana";
+            this.lblBrojDana.Size = new System.Drawing.Size(94, 32);
+            this.lblBrojDana.TabIndex = 49;
+            this.lblBrojDana.Text = "Broj dana:";
+            // 
             // frmIznajmi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
+            this.Controls.Add(this.lblBrojDana);
+            this.Controls.Add(this.lblCijena);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.label6);
@@ -433,5 +460,7 @@
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Naziv;
         private DataGridViewTextBoxColumn CijenaDan;
+        private Label lblCijena;
+        private Label lblBrojDana;
     }
 }
