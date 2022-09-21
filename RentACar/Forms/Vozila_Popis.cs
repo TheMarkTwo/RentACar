@@ -15,12 +15,17 @@ namespace RentACar.Forms
 {
     public partial class frmVozila : Form
     {
-        DBComms dbc = new();
+        readonly DBComms dbc = new();
 
         public frmVozila()
         {
             InitializeComponent();
         }
+        private void frmVozila_Load(object sender, EventArgs e)
+        {
+            OsvjeziPopis();
+        }
+
         private void dgvVozila_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Vozilo v = dbc.DohvatiVozilo(int.Parse(dgvVozila.Rows[e.RowIndex].Cells[0].Value.ToString()));
@@ -28,10 +33,6 @@ namespace RentACar.Forms
             detv.Show();
         }
 
-        private void frmVozila_Load(object sender, EventArgs e)
-        {
-            OsvjeziPopis();
-        }
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDodavanjeVozila dodvoz = new frmDodavanjeVozila();

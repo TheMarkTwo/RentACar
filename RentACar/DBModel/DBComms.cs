@@ -10,12 +10,12 @@ namespace RentACar.DBModel
 {
     internal class DBComms
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connString);
+        readonly SqlConnection conn = new(Properties.Settings.Default.connString);
 
         // VOZILA
         public Vozilo DohvatiVozilo(int id)
         {
-            SqlCommand command = new SqlCommand($"SELECT * FROM Vozila WHERE ID = {id}", conn);
+            SqlCommand command = new($"SELECT * FROM Vozila WHERE ID = {id}", conn);
             Vozilo v = new();
             conn.Open();
             using (SqlDataReader dr = command.ExecuteReader())
@@ -69,7 +69,7 @@ namespace RentACar.DBModel
         public void IzbrisiVozilo(int id)
         {
             string queryString = $"DELETE FROM Vozila WHERE ID = {id}";
-            SqlCommand command = new SqlCommand(queryString, conn);
+            SqlCommand command = new(queryString, conn);
             conn.Open();
             command.ExecuteNonQuery();
             conn.Close();
@@ -84,7 +84,7 @@ namespace RentACar.DBModel
             {
                 while (dr.Read())
                 {
-                    Vozilo v = new Vozilo()
+                    Vozilo v = new()
                     {
                         ID = dr.GetInt32(0),
                         Marka = dr.GetString(1),
@@ -104,6 +104,29 @@ namespace RentACar.DBModel
         }
 
         //KUPCI
+        public List<Kupac> UcitajKupce(string queryString)
+        {
+            List<Kupac> lista = new List<Kupac>();
+            SqlCommand command = new SqlCommand(queryString, conn);
+            conn.Open();
+            using (SqlDataReader dr = command.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    Kupac k = new()
+                    {
+                        OIB = dr.GetString(0),
+                        Ime = dr.GetString(1),
+                        Prezime = dr.GetString(2),
+                        Broj = dr.GetString(3),
+                        Email = dr.GetString(4)
+                    };
+                    lista.Add(k);
+                }
+            }
+            conn.Close();
+            return lista;
+        }
 
         //NAJMOVI
     }

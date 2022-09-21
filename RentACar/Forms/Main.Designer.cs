@@ -99,6 +99,7 @@
             this.kupciToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.kupciToolStripMenuItem.Size = new System.Drawing.Size(73, 36);
             this.kupciToolStripMenuItem.Text = "Kupci";
+            this.kupciToolStripMenuItem.Click += new System.EventHandler(this.kupciToolStripMenuItem_Click);
             // 
             // dgvNajmovi
             // 

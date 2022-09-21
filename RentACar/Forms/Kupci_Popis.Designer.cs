@@ -1,6 +1,6 @@
 ﻿namespace RentACar.Forms
 {
-    partial class frmPopisKupaca
+    partial class frmKupci
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPopisKupaca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKupci));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.izbrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblVozila = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.Email});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
@@ -130,7 +130,7 @@
             this.dgvVozila.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVozila.RowHeadersVisible = false;
             this.dgvVozila.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvVozila.RowTemplate.Height = 140;
+            this.dgvVozila.RowTemplate.Height = 60;
             this.dgvVozila.RowTemplate.ReadOnly = true;
             this.dgvVozila.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVozila.Size = new System.Drawing.Size(1282, 523);
@@ -138,35 +138,40 @@
             // 
             // OIB
             // 
+            this.OIB.FillWeight = 76.14212F;
             this.OIB.HeaderText = "OIB";
             this.OIB.Name = "OIB";
             this.OIB.ReadOnly = true;
             // 
             // Ime
             // 
+            this.Ime.FillWeight = 115.5554F;
             this.Ime.HeaderText = "Ime";
             this.Ime.Name = "Ime";
             this.Ime.ReadOnly = true;
             // 
             // Prezime
             // 
+            this.Prezime.FillWeight = 115.5554F;
             this.Prezime.HeaderText = "Prezime";
             this.Prezime.Name = "Prezime";
             this.Prezime.ReadOnly = true;
             // 
             // Broj
             // 
+            this.Broj.FillWeight = 77.19164F;
             this.Broj.HeaderText = "Broj";
             this.Broj.Name = "Broj";
             this.Broj.ReadOnly = true;
             // 
             // Email
             // 
+            this.Email.FillWeight = 115.5554F;
             this.Email.HeaderText = "E-mail";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
-            // frmPopisKupaca
+            // frmKupci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,9 +183,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmPopisKupaca";
+            this.Name = "frmKupci";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled kupaca";
+            this.Load += new System.EventHandler(this.frmPopisKupaca_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).EndInit();

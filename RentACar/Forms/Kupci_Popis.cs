@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RentACar.DBModel;
+using RentACar.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,21 @@ using System.Windows.Forms;
 
 namespace RentACar.Forms
 {
-    public partial class frmPopisKupaca : Form
+    public partial class frmKupci : Form
     {
-        public frmPopisKupaca()
+        readonly DBComms dbc = new();
+
+        public frmKupci()
         {
             InitializeComponent();
+        }
+
+        private void frmPopisKupaca_Load(object sender, EventArgs e)
+        {
+            dgvVozila.Rows.Clear();
+            List<Kupac> lista = dbc.UcitajKupce("SELECT * FROM Kupci");
+            foreach (Kupac k in lista)
+                dgvVozila.Rows.Add(k.OIB, k.Ime, k.Prezime, k.Broj, k.Email);
         }
     }
 }

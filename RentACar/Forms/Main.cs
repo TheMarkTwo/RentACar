@@ -24,14 +24,20 @@ namespace RentACar.Forms
         }
         private void iznajmiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIznajmi izn = new frmIznajmi();
+            frmIznajmi izn = new();
             izn.ShowDialog();
         }
 
         private void vozilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVozila voz = new frmVozila();
+            frmVozila voz = new();
             voz.ShowDialog();
+        }
+
+        private void kupciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKupci kup = new();
+            kup.ShowDialog();
         }
 
         private void cboxPretragaDatum_CheckedChanged(object sender, EventArgs e)
