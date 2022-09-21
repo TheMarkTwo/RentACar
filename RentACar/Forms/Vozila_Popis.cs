@@ -15,7 +15,6 @@ namespace RentACar.Forms
 {
     public partial class frmVozila : Form
     {
-        private readonly string connString = Properties.Settings.Default.connString;
         DBComms dbc = new();
 
         public frmVozila()
@@ -31,19 +30,19 @@ namespace RentACar.Forms
 
         private void frmVozila_Load(object sender, EventArgs e)
         {
-            dbc.UcitajVozila(dgvVozila, "SELECT * FROM Vozila");
+            OsvjeziPopis();
         }
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDodavanjeVozila dodvoz = new frmDodavanjeVozila();
             dodvoz.ShowDialog();
-            dbc.UcitajVozila(dgvVozila, "SELECT * FROM Vozila");
+            OsvjeziPopis();
         }
         private void urediToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDodavanjeVozila dodvoz = new frmDodavanjeVozila(dbc.DohvatiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString())));
             dodvoz.ShowDialog();
-            dbc.UcitajVozila(dgvVozila, "SELECT * FROM Vozila");
+            OsvjeziPopis();
         }
 
         private void izbrisiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +56,20 @@ namespace RentACar.Forms
                     dgvVozila.Rows.RemoveAt(dgvVozila.SelectedRows[0].Index);
                     dbc.IzbrisiVozilo(id);
                 }
+            }
+        }
+
+        public void OsvjeziPopis()
+        {
+            dgvVozila.Rows.Clear();
+            List<Vozilo> lista = dbc.UcitajVozila("SELECT * FROM Vozila");
+            foreach (Vozilo v in lista)
+            {
+                Image img;
+                byte[] imgBytes = Convert.FromBase64String(v.Slika);
+                using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
+
+                dgvVozila.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
             }
         }
     }

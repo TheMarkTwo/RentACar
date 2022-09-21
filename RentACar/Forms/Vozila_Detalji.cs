@@ -28,7 +28,7 @@ namespace RentACar.Forms
             pboxSlika.Image = img;
             lblNaziv.Text = $"{v.Marka} {v.Model}";
             lblSnaga.Text = v.Snaga + " PH";
-            lblKubikaza.Text = v.Kubikaza + " cm3";
+            lblKubikaza.Text = $"{v.Kubikaza:0,0} cc";
             lblBrzina.Text = v.Brzina + " km/h";
             lblNulaDoSto.Text = v.NulaDoSto + " s";
 

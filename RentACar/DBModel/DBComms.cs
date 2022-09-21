@@ -66,11 +66,6 @@ namespace RentACar.DBModel
             conn.Close();
         }
 
-        public void UrediVozilo(Vozilo v)
-        {
-
-        }
-
         public void IzbrisiVozilo(int id)
         {
             string queryString = $"DELETE FROM Vozila WHERE ID = {id}";
@@ -80,9 +75,9 @@ namespace RentACar.DBModel
             conn.Close();
         }
 
-        public void UcitajVozila(DataGridView dgv, string queryString)
+        public List<Vozilo> UcitajVozila(string queryString)
         {
-            dgv.Rows.Clear();
+            List<Vozilo> lista = new List<Vozilo>();
             SqlCommand command = new SqlCommand(queryString, conn);
             conn.Open();
             using (SqlDataReader dr = command.ExecuteReader())
@@ -101,14 +96,11 @@ namespace RentACar.DBModel
                         CijenaDan = dr.GetDecimal(7),
                         Slika = dr.GetString(8)
                     };
-                    Image img;
-                    byte[] imgBytes = Convert.FromBase64String(v.Slika);
-                    using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
-
-                    dgv.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
+                    lista.Add(v);
                 }
             }
             conn.Close();
+            return lista;
         }
 
         //KUPCI

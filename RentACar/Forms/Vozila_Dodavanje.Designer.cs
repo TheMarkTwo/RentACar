@@ -79,7 +79,7 @@
             this.txtModel.Location = new System.Drawing.Point(50, 241);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(348, 36);
-            this.txtModel.TabIndex = 11;
+            this.txtModel.TabIndex = 1;
             // 
             // txtMarka
             // 
@@ -88,7 +88,7 @@
             this.txtMarka.Location = new System.Drawing.Point(50, 161);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(348, 36);
-            this.txtMarka.TabIndex = 10;
+            this.txtMarka.TabIndex = 0;
             // 
             // label3
             // 
@@ -106,9 +106,9 @@
             this.label4.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(44, 289);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 27);
+            this.label4.Size = new System.Drawing.Size(102, 27);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Kubikaza (cm3):";
+            this.label4.Text = "Kubikaza (cc):";
             // 
             // txtSnaga
             // 
@@ -117,7 +117,7 @@
             this.txtSnaga.Location = new System.Drawing.Point(232, 319);
             this.txtSnaga.Name = "txtSnaga";
             this.txtSnaga.Size = new System.Drawing.Size(166, 36);
-            this.txtSnaga.TabIndex = 16;
+            this.txtSnaga.TabIndex = 3;
             // 
             // txtKubikaza
             // 
@@ -126,7 +126,7 @@
             this.txtKubikaza.Location = new System.Drawing.Point(50, 319);
             this.txtKubikaza.Name = "txtKubikaza";
             this.txtKubikaza.Size = new System.Drawing.Size(166, 36);
-            this.txtKubikaza.TabIndex = 15;
+            this.txtKubikaza.TabIndex = 2;
             // 
             // label5
             // 
@@ -155,7 +155,7 @@
             this.txtCijenaDan.Location = new System.Drawing.Point(50, 472);
             this.txtCijenaDan.Name = "txtCijenaDan";
             this.txtCijenaDan.Size = new System.Drawing.Size(348, 36);
-            this.txtCijenaDan.TabIndex = 20;
+            this.txtCijenaDan.TabIndex = 6;
             // 
             // txtNulaDoSto
             // 
@@ -164,7 +164,7 @@
             this.txtNulaDoSto.Location = new System.Drawing.Point(232, 399);
             this.txtNulaDoSto.Name = "txtNulaDoSto";
             this.txtNulaDoSto.Size = new System.Drawing.Size(166, 36);
-            this.txtNulaDoSto.TabIndex = 19;
+            this.txtNulaDoSto.TabIndex = 5;
             // 
             // label7
             // 
@@ -183,7 +183,7 @@
             this.txtBrzina.Location = new System.Drawing.Point(49, 399);
             this.txtBrzina.Name = "txtBrzina";
             this.txtBrzina.Size = new System.Drawing.Size(166, 36);
-            this.txtBrzina.TabIndex = 23;
+            this.txtBrzina.TabIndex = 4;
             // 
             // pboxSlika
             // 
@@ -243,8 +243,8 @@
             this.btnSpremi.Location = new System.Drawing.Point(50, 545);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(348, 45);
-            this.btnSpremi.TabIndex = 30;
-            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.TabIndex = 7;
+            this.btnSpremi.Text = "SPREMI";
             this.btnSpremi.UseVisualStyleBackColor = false;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 

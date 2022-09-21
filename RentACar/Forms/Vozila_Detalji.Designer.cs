@@ -68,16 +68,16 @@
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(10, 3, 15, 3);
             this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip.Size = new System.Drawing.Size(1306, 40);
+            this.menuStrip.Size = new System.Drawing.Size(1306, 45);
             this.menuStrip.TabIndex = 27;
             this.menuStrip.Text = "menuStrip";
             // 
             // iznajmiToolStripMenuItem
             // 
-            this.iznajmiToolStripMenuItem.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.iznajmiToolStripMenuItem.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.iznajmiToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.iznajmiToolStripMenuItem.Name = "iznajmiToolStripMenuItem";
-            this.iznajmiToolStripMenuItem.Size = new System.Drawing.Size(83, 34);
+            this.iznajmiToolStripMenuItem.Size = new System.Drawing.Size(90, 39);
             this.iznajmiToolStripMenuItem.Text = "Iznajmi";
             // 
             // panel1
@@ -103,14 +103,16 @@
             // 
             // lblNaziv
             // 
+            this.lblNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblNaziv.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblNaziv.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNaziv.Location = new System.Drawing.Point(0, 87);
+            this.lblNaziv.Location = new System.Drawing.Point(12, 67);
             this.lblNaziv.Name = "lblNaziv";
-            this.lblNaziv.Size = new System.Drawing.Size(453, 79);
+            this.lblNaziv.Size = new System.Drawing.Size(414, 104);
             this.lblNaziv.TabIndex = 30;
             this.lblNaziv.Text = "Naziv vozila";
-            this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblNaziv.UseMnemonic = false;
             // 
             // label1
             // 

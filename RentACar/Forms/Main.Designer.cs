@@ -83,6 +83,7 @@
             this.iznajmiToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iznajmiToolStripMenuItem.Size = new System.Drawing.Size(83, 36);
             this.iznajmiToolStripMenuItem.Text = "Iznajmi";
+            this.iznajmiToolStripMenuItem.Click += new System.EventHandler(this.iznajmiToolStripMenuItem_Click);
             // 
             // vozilaToolStripMenuItem
             // 
@@ -157,7 +158,7 @@
             this.dgvNajmovi.RowTemplate.ReadOnly = true;
             this.dgvNajmovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNajmovi.Size = new System.Drawing.Size(835, 577);
-            this.dgvNajmovi.TabIndex = 1;
+            this.dgvNajmovi.TabIndex = 5;
             // 
             // ID
             // 
@@ -208,7 +209,7 @@
             this.txtVozilo.Location = new System.Drawing.Point(50, 192);
             this.txtVozilo.Name = "txtVozilo";
             this.txtVozilo.Size = new System.Drawing.Size(348, 36);
-            this.txtVozilo.TabIndex = 2;
+            this.txtVozilo.TabIndex = 0;
             // 
             // txtOIB
             // 
@@ -217,7 +218,7 @@
             this.txtOIB.Location = new System.Drawing.Point(50, 272);
             this.txtOIB.Name = "txtOIB";
             this.txtOIB.Size = new System.Drawing.Size(348, 36);
-            this.txtOIB.TabIndex = 3;
+            this.txtOIB.TabIndex = 1;
             // 
             // label1
             // 
@@ -270,8 +271,8 @@
             this.btnPretrazi.Location = new System.Drawing.Point(50, 545);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(348, 45);
-            this.btnPretrazi.TabIndex = 12;
-            this.btnPretrazi.Text = "Pretrazi";
+            this.btnPretrazi.TabIndex = 4;
+            this.btnPretrazi.Text = "PRETRAZI";
             this.btnPretrazi.UseVisualStyleBackColor = false;
             // 
             // dtpDatumOd
@@ -282,9 +283,10 @@
             this.dtpDatumOd.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDatumOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumOd.Location = new System.Drawing.Point(50, 390);
+            this.dtpDatumOd.MinDate = new System.DateTime(2021, 9, 1, 0, 0, 0, 0);
             this.dtpDatumOd.Name = "dtpDatumOd";
             this.dtpDatumOd.Size = new System.Drawing.Size(348, 40);
-            this.dtpDatumOd.TabIndex = 13;
+            this.dtpDatumOd.TabIndex = 2;
             // 
             // dtpDatumDo
             // 
@@ -294,9 +296,10 @@
             this.dtpDatumDo.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDatumDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumDo.Location = new System.Drawing.Point(50, 469);
+            this.dtpDatumDo.MinDate = new System.DateTime(2022, 9, 20, 0, 0, 0, 0);
             this.dtpDatumDo.Name = "dtpDatumDo";
             this.dtpDatumDo.Size = new System.Drawing.Size(348, 40);
-            this.dtpDatumDo.TabIndex = 14;
+            this.dtpDatumDo.TabIndex = 3;
             // 
             // cboxPretragaDatum
             // 
