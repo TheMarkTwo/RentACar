@@ -55,6 +55,7 @@
             this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
             this.cboxPretragaDatum = new System.Windows.Forms.CheckBox();
             this.lblPretraga = new System.Windows.Forms.Label();
+            this.btnIzbrisi = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNajmovi)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             this.Cijena});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
@@ -207,7 +208,7 @@
             // 
             this.txtVozilo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtVozilo.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtVozilo.Location = new System.Drawing.Point(50, 192);
+            this.txtVozilo.Location = new System.Drawing.Point(50, 167);
             this.txtVozilo.Name = "txtVozilo";
             this.txtVozilo.Size = new System.Drawing.Size(348, 36);
             this.txtVozilo.TabIndex = 0;
@@ -216,7 +217,7 @@
             // 
             this.txtOIB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOIB.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOIB.Location = new System.Drawing.Point(50, 272);
+            this.txtOIB.Location = new System.Drawing.Point(50, 247);
             this.txtOIB.Name = "txtOIB";
             this.txtOIB.Size = new System.Drawing.Size(348, 36);
             this.txtOIB.TabIndex = 1;
@@ -225,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(44, 162);
+            this.label1.Location = new System.Drawing.Point(44, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 27);
             this.label1.TabIndex = 8;
@@ -235,7 +236,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(45, 242);
+            this.label2.Location = new System.Drawing.Point(45, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 27);
             this.label2.TabIndex = 9;
@@ -245,7 +246,7 @@
             // 
             this.lblOd.AutoSize = true;
             this.lblOd.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOd.Location = new System.Drawing.Point(45, 360);
+            this.lblOd.Location = new System.Drawing.Point(45, 336);
             this.lblOd.Name = "lblOd";
             this.lblOd.Size = new System.Drawing.Size(121, 27);
             this.lblOd.TabIndex = 10;
@@ -255,7 +256,7 @@
             // 
             this.lblDo.AutoSize = true;
             this.lblDo.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDo.Location = new System.Drawing.Point(44, 440);
+            this.lblDo.Location = new System.Drawing.Point(44, 416);
             this.lblDo.Name = "lblDo";
             this.lblDo.Size = new System.Drawing.Size(121, 27);
             this.lblDo.TabIndex = 11;
@@ -263,13 +264,13 @@
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnPretrazi.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnPretrazi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPretrazi.FlatAppearance.BorderSize = 0;
             this.btnPretrazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPretrazi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPretrazi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPretrazi.Location = new System.Drawing.Point(50, 545);
+            this.btnPretrazi.Location = new System.Drawing.Point(50, 514);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(348, 45);
             this.btnPretrazi.TabIndex = 4;
@@ -283,7 +284,7 @@
             this.dtpDatumOd.Enabled = false;
             this.dtpDatumOd.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDatumOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatumOd.Location = new System.Drawing.Point(50, 390);
+            this.dtpDatumOd.Location = new System.Drawing.Point(50, 366);
             this.dtpDatumOd.MinDate = new System.DateTime(2021, 9, 1, 0, 0, 0, 0);
             this.dtpDatumOd.Name = "dtpDatumOd";
             this.dtpDatumOd.Size = new System.Drawing.Size(348, 40);
@@ -296,7 +297,7 @@
             this.dtpDatumDo.Enabled = false;
             this.dtpDatumDo.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpDatumDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatumDo.Location = new System.Drawing.Point(50, 469);
+            this.dtpDatumDo.Location = new System.Drawing.Point(50, 445);
             this.dtpDatumDo.MinDate = new System.DateTime(2022, 9, 20, 0, 0, 0, 0);
             this.dtpDatumDo.Name = "dtpDatumDo";
             this.dtpDatumDo.Size = new System.Drawing.Size(348, 40);
@@ -307,7 +308,7 @@
             this.cboxPretragaDatum.AutoSize = true;
             this.cboxPretragaDatum.FlatAppearance.BorderSize = 4;
             this.cboxPretragaDatum.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cboxPretragaDatum.Location = new System.Drawing.Point(50, 322);
+            this.cboxPretragaDatum.Location = new System.Drawing.Point(50, 297);
             this.cboxPretragaDatum.Name = "cboxPretragaDatum";
             this.cboxPretragaDatum.Size = new System.Drawing.Size(160, 31);
             this.cboxPretragaDatum.TabIndex = 15;
@@ -318,12 +319,28 @@
             // lblPretraga
             // 
             this.lblPretraga.Font = new System.Drawing.Font("Dubai", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPretraga.Location = new System.Drawing.Point(10, 74);
+            this.lblPretraga.Location = new System.Drawing.Point(10, 60);
             this.lblPretraga.Name = "lblPretraga";
             this.lblPretraga.Size = new System.Drawing.Size(432, 66);
             this.lblPretraga.TabIndex = 7;
             this.lblPretraga.Text = "Pretraga aktivnih najmova";
             this.lblPretraga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnIzbrisi
+            // 
+            this.btnIzbrisi.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnIzbrisi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzbrisi.FlatAppearance.BorderSize = 0;
+            this.btnIzbrisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzbrisi.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIzbrisi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIzbrisi.Location = new System.Drawing.Point(50, 577);
+            this.btnIzbrisi.Name = "btnIzbrisi";
+            this.btnIzbrisi.Size = new System.Drawing.Size(348, 45);
+            this.btnIzbrisi.TabIndex = 16;
+            this.btnIzbrisi.Text = "IZBRISI";
+            this.btnIzbrisi.UseVisualStyleBackColor = false;
+            this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
             // 
             // frmMain
             // 
@@ -331,6 +348,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1306, 647);
+            this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.cboxPretragaDatum);
             this.Controls.Add(this.dtpDatumDo);
             this.Controls.Add(this.dtpDatumOd);
@@ -384,5 +402,6 @@
         private DateTimePicker dtpDatumDo;
         private CheckBox cboxPretragaDatum;
         private Label lblPretraga;
+        private Button btnIzbrisi;
     }
 }

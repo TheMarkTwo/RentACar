@@ -79,6 +79,7 @@
             this.iznajmiToolStripMenuItem.Name = "iznajmiToolStripMenuItem";
             this.iznajmiToolStripMenuItem.Size = new System.Drawing.Size(90, 39);
             this.iznajmiToolStripMenuItem.Text = "Iznajmi";
+            this.iznajmiToolStripMenuItem.Click += new System.EventHandler(this.iznajmiToolStripMenuItem_Click);
             // 
             // panel1
             // 

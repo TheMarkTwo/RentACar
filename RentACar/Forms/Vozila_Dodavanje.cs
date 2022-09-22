@@ -5,7 +5,7 @@ namespace RentACar.Forms
 {
     public partial class frmDodavanjeVozila : Form
     {
-        DBComms dbc = new();
+        readonly DBComms dbc = new();
         String base64Img;
 
         bool uredivanje = false;
@@ -37,7 +37,7 @@ namespace RentACar.Forms
                 txtNulaDoSto.Text = v.NulaDoSto.ToString();
                 txtCijenaDan.Text = v.CijenaDan.ToString();
                 base64Img = v.Slika;
-                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(v.Slika))) pboxSlika.Image = Image.FromStream(ms);
+                using MemoryStream ms = new(Convert.FromBase64String(v.Slika)); pboxSlika.Image = Image.FromStream(ms);
             }
         }
 
@@ -49,7 +49,7 @@ namespace RentACar.Forms
             if (base64Img != "")
             {
                 imgBytes = Convert.FromBase64String(base64Img);
-                using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
+                using (MemoryStream ms = new(imgBytes)) img = Image.FromStream(ms);
                 pboxSlika.Image = img;
             }
         }
@@ -87,7 +87,7 @@ namespace RentACar.Forms
         public static string GetImageBase64()
         {
             string base64Image = "";
-            using (OpenFileDialog openFileDialog = new OpenFileDialog() { InitialDirectory = Directory.GetCurrentDirectory(), Filter = "Image Files|*.jpg;*.jpeg;*.png" })
+            using (OpenFileDialog openFileDialog = new() { InitialDirectory = Directory.GetCurrentDirectory(), Filter = "Image Files|*.jpg;*.jpeg;*.png" })
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {

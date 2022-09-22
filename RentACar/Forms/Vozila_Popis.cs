@@ -35,14 +35,14 @@ namespace RentACar.Forms
 
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDodavanjeVozila dodvoz = new frmDodavanjeVozila();
+            frmDodavanjeVozila dodvoz = new();
             dodvoz.ShowDialog();
             OsvjeziPopis();
         }
 
         private void urediToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDodavanjeVozila dodvoz = new frmDodavanjeVozila(dbc.DohvatiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString())));
+            frmDodavanjeVozila dodvoz = new(dbc.DohvatiVozilo(int.Parse(dgvVozila.CurrentRow.Cells[0].Value.ToString())));
             dodvoz.ShowDialog();
             OsvjeziPopis();
         }
@@ -68,7 +68,7 @@ namespace RentACar.Forms
             {
                 Image img;
                 byte[] imgBytes = Convert.FromBase64String(v.Slika);
-                using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
+                using (MemoryStream ms = new(imgBytes)) img = Image.FromStream(ms);
 
                 dgvVozila.Rows.Add(v.ID, img, $"{v.Marka} {v.Model}", $"{v.Snaga}PS", $"{v.Brzina}km/h", $"{v.NulaDoSto}s", $"{v.CijenaDan:0,0}€");
             }

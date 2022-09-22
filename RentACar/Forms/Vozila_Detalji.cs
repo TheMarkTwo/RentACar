@@ -13,7 +13,8 @@ namespace RentACar.Forms
 {
     public partial class frmDetaljiVozila : Form
     {
-        Vozilo v;
+        readonly Vozilo v;
+
         public frmDetaljiVozila(Vozilo _v)
         {
             v = _v;
@@ -24,7 +25,7 @@ namespace RentACar.Forms
         {
             Image img;
             byte[] imgBytes = Convert.FromBase64String(v.Slika);
-            using (MemoryStream ms = new MemoryStream(imgBytes)) img = Image.FromStream(ms);
+            using (MemoryStream ms = new(imgBytes)) img = Image.FromStream(ms);
             pboxSlika.Image = img;
             lblNaziv.Text = $"{v.Marka} {v.Model}";
             lblSnaga.Text = v.Snaga + " PH";
@@ -35,6 +36,12 @@ namespace RentACar.Forms
             lblCijena1.Text = $"{(double)v.CijenaDan:0,0} € dan";
             lblCijena2.Text = $"{((double)v.CijenaDan * 0.90):0,0} € dan";
             lblCijena3.Text = $"{((double)v.CijenaDan * 0.80):0,0} € dan";
+        }
+
+        private void iznajmiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIznajmi izn = new(v);
+            izn.ShowDialog();
         }
     }
 }

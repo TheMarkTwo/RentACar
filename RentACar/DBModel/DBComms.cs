@@ -79,8 +79,8 @@ namespace RentACar.DBModel
 
         public List<Vozilo> UcitajVozila(string queryString)
         {
-            List<Vozilo> lista = new List<Vozilo>();
-            SqlCommand command = new SqlCommand(queryString, conn);
+            List<Vozilo> lista = new();
+            SqlCommand command = new(queryString, conn);
             conn.Open();
             using (SqlDataReader dr = command.ExecuteReader())
             {
@@ -126,6 +126,21 @@ namespace RentACar.DBModel
             conn.Close();
             return k;
         }
+
+        public void SpremiKupca(Kupac k)
+        {
+            string queryString = "INSERT INTO Kupci(OIB, Ime, Prezime, Broj, Email) " +
+                "VALUES (@oib, @ime, @prezime, @broj, @email)";
+            SqlCommand command = new(queryString, conn);
+            command.Parameters.AddWithValue("@oib", k.OIB);
+            command.Parameters.AddWithValue("@ime", k.Ime);
+            command.Parameters.AddWithValue("@prezime", k.Prezime);
+            command.Parameters.AddWithValue("@broj", k.Broj);
+            command.Parameters.AddWithValue("@email", k.Email);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
         
         public void IzbrisiKupca(string oib)
         {
@@ -138,8 +153,8 @@ namespace RentACar.DBModel
 
         public List<Kupac> UcitajKupce(string queryString)
         {
-            List<Kupac> lista = new List<Kupac>();
-            SqlCommand command = new SqlCommand(queryString, conn);
+            List<Kupac> lista = new();
+            SqlCommand command = new(queryString, conn);
             conn.Open();
             using (SqlDataReader dr = command.ExecuteReader())
             {
@@ -161,5 +176,53 @@ namespace RentACar.DBModel
         }
 
         //NAJMOVI
+        public void SpremiNajam(Najam n)
+        {
+            string queryString = "INSERT INTO Najmovi(ID_vozila, OIB_kupca, DatumNajma, DatumKraja, Cijena) " +
+                "VALUES (@ID_vozila, @OIB_kupca, @datumNajma, @datumKraja, @cijena)";
+            SqlCommand command = new(queryString, conn);
+            command.Parameters.AddWithValue("@ID_vozila", n.ID_vozila);
+            command.Parameters.AddWithValue("@OIB_kupca", n.OIB_kupca);
+            command.Parameters.AddWithValue("@datumNajma", n.DatumNajma.ToString());
+            command.Parameters.AddWithValue("@datumKraja", n.DatumKraja.ToString());
+            command.Parameters.AddWithValue("@cijena", n.Cijena);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void IzbrisiNajam(int id)
+        {
+            SqlCommand command = new($"DELETE FROM Najmovi WHERE ID = @id", conn);
+            command.Parameters.AddWithValue("@id", id);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public List<Najam> UcitajNajmove(string queryString)
+        {
+            List<Najam> lista = new();
+            SqlCommand command = new(queryString, conn);
+            conn.Open();
+            using (SqlDataReader dr = command.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    Najam n = new()
+                    {
+                        ID = dr.GetInt32(0),
+                        ID_vozila = dr.GetInt32(1),
+                        OIB_kupca = dr.GetString(2),
+                        DatumNajma = DateOnly.FromDateTime(dr.GetDateTime(3)),
+                        DatumKraja = DateOnly.FromDateTime(dr.GetDateTime(4)),
+                        Cijena = dr.GetInt32(5)
+                    };
+                    lista.Add(n);
+                }
+            }
+            conn.Close();
+            return lista;
+        }
     }
 }
